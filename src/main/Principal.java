@@ -6,9 +6,14 @@ public class Principal {
     }
 
     public Principal(){
-        Tablero t = new Tablero();
-        t.llenarTablero();
-        t.imprimirTablero();
+        mostrarTablero();
     }
 
+    public void mostrarTablero(){
+        Tablero mesaDeJuego = new Tablero();
+        mesaDeJuego.llenarTablero();
+        mesaDeJuego.imprimirTablero();
+    }
+
+    
 }
