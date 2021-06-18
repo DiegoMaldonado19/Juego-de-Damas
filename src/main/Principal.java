@@ -6,7 +6,9 @@ public class Principal {
     }
 
     public Principal(){
-      
+        Tablero t = new Tablero();
+        t.llenarTablero();
+        t.imprimirTablero();
     }
 
 }
