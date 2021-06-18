@@ -48,7 +48,7 @@ public class VectorUsuarios {
      */
     public void mostrarUsuario(){
         System.out.println("\n\n Usuarios de juego");
-        for(int i=0; i<siguienteCodigo; i++){
+        for(int i=0; i<(siguienteCodigo-1); i++){
             System.out.println((i+1)+") "+usuarios[i].mostrarInformacion());
         }
         System.out.println("\n\n");
