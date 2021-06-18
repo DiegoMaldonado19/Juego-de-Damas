@@ -91,6 +91,8 @@ public class Principal {
         System.out.println("Iniciando juego");
         System.out.println("\n");
         mesaDeJuego.llenarTablero();
-        mesaDeJuego.imprimirTablero();
+        mesaDeJuego.imprimirTablero(0,3,8);
+        mesaDeJuego.imprimirTablero(3,5,8);
+        mesaDeJuego.imprimirTableroColor(5, 8, 8);
     }
 }
