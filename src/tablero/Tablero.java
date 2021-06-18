@@ -7,8 +7,8 @@ public class Tablero {
      * Atributos de la clase donde tenemos las fichas y la matriz de tablero
      */
     private char fichaBlanca = 'O';
-    private char fichaNegra = 'Ø';
-    private char cuadradoBlanco = '■';  
+    private char fichaNegra = 'O';
+    private char cuadradoBlanco = '=';  
     private char[][] matrizTablero = new char[8][8];
     private Color color = new Color();
 
