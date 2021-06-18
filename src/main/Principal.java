@@ -66,6 +66,7 @@ public class Principal {
                 break;
     
                 case 4:
+                    tablaUsuarios.mostrarPuntuaciones();
                 break;
     
                 case 5:
@@ -81,7 +82,6 @@ public class Principal {
         }while(opcion!=5);
        
     }
-
     /**
      * Metodo mostrar tablero el cual imprime en pantalla el tablero e inicia el juego
      */
@@ -95,4 +95,5 @@ public class Principal {
         mesaDeJuego.imprimirTablero(3,5,8);
         mesaDeJuego.imprimirTableroColor(5, 8, 8);
     }
+
 }
