@@ -16,7 +16,6 @@ public class Principal {
      * Instanciamos un objeto de la clase vector usuarios y uno de la clase tablero
      */
     VectorUsuarios tablaUsuarios = new VectorUsuarios();
-    Tablero tableroJuego = new Tablero();
 
     /**
      * Constructor por defecto de la clase principal
@@ -62,7 +61,7 @@ public class Principal {
                 break;
     
                 case 3:
-                    mostrarTablero();
+                    mostrarTableroObjetos();
                 break;
     
                 case 4:
@@ -85,15 +84,12 @@ public class Principal {
     /**
      * Metodo mostrar tablero el cual imprime en pantalla el tablero e inicia el juego
      */
-    public void mostrarTablero(){
+    public void mostrarTableroObjetos(){
         Tablero mesaDeJuego = new Tablero();
-        System.out.println("\n\n");
-        System.out.println("Iniciando juego");
-        System.out.println("\n");
-        mesaDeJuego.llenarTablero();
-        mesaDeJuego.imprimirTablero(0,3,8);
-        mesaDeJuego.imprimirTablero(3,5,8);
-        mesaDeJuego.imprimirTableroColor(5, 8, 8);
+        mesaDeJuego.llenarTablero(0, 3, 8);
+        mesaDeJuego.llenarTablero(3, 5, 8);
+        mesaDeJuego.llenarTablero(5, 8, 8);
+        mesaDeJuego.imprimirTablero(0, 8, 8);
     }
 
 }
