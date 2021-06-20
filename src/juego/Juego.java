@@ -11,7 +11,7 @@ public class Juego {
      * @param tablaUsuarios , arreglo que contiene a todos los usuarios del sistema
      * @param mesaDeJuego , arreglo que contiene el tablero
      */
-    public void inicioJuego(VectorUsuarios tablaUsuarios, Tablero mesaDeJuego){
+    public void piedraPapelTijeras(VectorUsuarios tablaUsuarios){
         boolean existeGanador = false;
         int idJugador1, idJugador2, aleatorio, aleatorio2;
         String armaJugador1="", armaJugador2="";
@@ -91,6 +91,10 @@ public class Juego {
         }
         while(existeGanador==false);
         System.out.println("\n\n");
+        
+    }
+
+    public void partidaNormal(Tablero mesaDeJuego, VectorUsuarios tablaUsuarios){
         mesaDeJuego.llenarTablero(0, 3, 8);
         mesaDeJuego.llenarTablero(3, 5, 8);
         mesaDeJuego.llenarTablero(5, 8, 8);

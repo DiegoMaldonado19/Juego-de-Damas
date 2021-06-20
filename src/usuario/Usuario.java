@@ -32,6 +32,26 @@ public class Usuario{
     }
 
     /**
+     * Constructor que pide como parametros extra, las partidas ganadas y partidas perdidas
+     * @param id    , parametro para asignar un id al usuario
+     * @param nombre , parametro para asignar su nombre
+     * @param nickname , parametro para asignar su nickname
+     * @param puntuacion , parametro para asignar su puntuacion
+     * @param partidasGanadas , parametro para asignar sus partidas ganadas
+     * @param partidasPerdidas , parametro para asignar sus partidas perdidas
+     */
+    public Usuario(int id, String nombre, String nickname, int puntuacion, int partidasGanadas, int partidasPerdidas){
+        this.id = id;
+        this.nombre = nombre;
+        this.nickname = nickname;
+        this.puntuacion = puntuacion;
+        this.partidasGanadas = partidasGanadas;
+        this.partidasPerdidas = partidasPerdidas;
+        this.tieneFichasBlancas = false;
+        this.tieneFichasRojas = false;
+    }
+
+    /**
      * Metodo que settea la puntuacion del usuario
      * @param puntuacion
      */
@@ -141,6 +161,11 @@ public class Usuario{
      */
     public String mostrarInformacion(){
         return "Id: "+this.id+ ", nombre del usuario: "+this.nombre+", nickname: "+this.nickname;
+    }
+
+    public String mostrarDatosPodio(){
+        return "Id: "+this.id+", nickname: "+this.nickname+", puntuacion: "+this.puntuacion+
+        ", partidas ganadas: "+this.partidasGanadas+", partidas perdidas: "+this.partidasPerdidas;
     }
 
 }

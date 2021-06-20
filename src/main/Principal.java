@@ -14,9 +14,11 @@ public class Principal {
     }
 
     /**
-     * Instanciamos un objeto de la clase vector usuarios y uno de la clase tablero
+     * Instanciamos un objeto de la clase vector usuarios y uno de la clase tablero, tambien uno de la clase juego
      */
     VectorUsuarios tablaUsuarios = new VectorUsuarios();
+    Tablero mesaDeJuego = new Tablero();
+    Juego juego = new Juego();
 
     /**
      * Constructor por defecto de la clase principal
@@ -60,7 +62,7 @@ public class Principal {
                 break;
     
                 case 4:
-                    tablaUsuarios.mostrarPuntuaciones();
+                    menuEstadisticas();
                 break;
     
                 case 5:
@@ -76,14 +78,45 @@ public class Principal {
         }while(opcion!=5);
        
     }
+
     /**
-     * Metodo mostrar tablero el cual imprime en pantalla el tablero e inicia el juego
+     * Menu para mostrar el menu de estadisticas
+     */
+    public void menuEstadisticas(){
+        int opcion=0;
+
+        do{
+            System.out.println("\n\n");
+            System.out.println("Menu de estadisticas");
+            System.out.println("------------------------------------");
+            System.out.println("1) Mostrar Podio");
+            System.out.println("2) Salir");
+            opcion = IngresoDatos.getEntero("Elige una opcion", true);
+            switch(opcion){
+                case 1:
+                    tablaUsuarios.asignarOrdenarPodio();
+                    tablaUsuarios.mostrarPodio();
+                break;
+
+                case 2:
+                    System.out.println("\n");
+                    System.out.println("Estas saliendo del menu de estadisticas...");
+                break;
+
+                default:
+                    System.out.println("\n");
+                    System.out.println("Ingresa una opcion correcta");
+                break;
+            }
+        }while(opcion!=2);
+    }
+
+    /**
+     * Metodo para iniciar el juego
      */
     public void jugar(VectorUsuarios tablaUsuarios){
-        Tablero mesaDeJuego = new Tablero();
-        Juego juego = new Juego();
-        juego.inicioJuego(tablaUsuarios, mesaDeJuego);
-
+        juego.piedraPapelTijeras(tablaUsuarios);
+        juego.partidaNormal(mesaDeJuego, tablaUsuarios);
     }
 
 }
