@@ -75,9 +75,10 @@ public class VectorUsuarios {
         System.out.println("Puntuaciones de Usuarios:");
         System.out.println("-----------------------------------");
         for(int i=0; i<(siguienteCodigo-1); i++){
-            System.out.println("-)"+usuarios[i].getNickname()+" tiene "+usuarios[i].getPartidasPerdidas()+" partidas perdidas");
-            System.out.println("-)"+usuarios[i].getNickname()+" tiene "+usuarios[i].getPartidasGanadas()+" partidas ganadas");
-            System.out.println("-)"+usuarios[i].getNickname()+" tiene "+usuarios[i].getPuntuacion()+ " puntos");
+            System.out.println("-) "+usuarios[i].getNickname()+" tiene "+usuarios[i].getPartidasPerdidas()+" partidas perdidas");
+            System.out.println("-) "+usuarios[i].getNickname()+" tiene "+usuarios[i].getPartidasGanadas()+" partidas ganadas");
+            System.out.println("-) "+usuarios[i].getNickname()+" tiene "+usuarios[i].getPuntuacion()+ " puntos");
+            System.out.println("\n\n");
         }
     }
 }
