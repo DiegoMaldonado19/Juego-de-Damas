@@ -61,7 +61,7 @@ public class Principal {
                 break;
     
                 case 3:
-                    mostrarTableroObjetos();
+                    jugar();
                 break;
     
                 case 4:
@@ -84,7 +84,7 @@ public class Principal {
     /**
      * Metodo mostrar tablero el cual imprime en pantalla el tablero e inicia el juego
      */
-    public void mostrarTableroObjetos(){
+    public void jugar(){
         Tablero mesaDeJuego = new Tablero();
         mesaDeJuego.llenarTablero(0, 3, 8);
         mesaDeJuego.llenarTablero(3, 5, 8);

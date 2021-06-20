@@ -1,5 +1,5 @@
 <?xml version ="1.0" ?>
-<project name="Primer proyecto de ant" default ="jar" basedir =".">
+<project name="Juego de Damas - Practica 3" default ="jar" basedir =".">
     <description >
     Archivo XML
 </description >

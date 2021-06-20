@@ -12,6 +12,8 @@ public class Usuario{
     private int puntuacion;
     private int partidasGanadas;
     private int partidasPerdidas;
+    private boolean tieneFichasRojas;
+    private boolean tieneFichasBlancas;
 
     /**
      * Constructor por defecto, el cual pide como parametros un id y un nombre
@@ -25,6 +27,8 @@ public class Usuario{
         this.puntuacion = 0;
         this.partidasGanadas = 0;
         this.partidasPerdidas = 0;
+        this.tieneFichasBlancas = false;
+        this.tieneFichasRojas = false;
     }
 
     /**
@@ -98,7 +102,39 @@ public class Usuario{
     public String getNickname(){
         return nickname;
     }
+
+    /**
+     * Metodo getter para saber si le tocaron las fichas rojas al jugador
+     * @return
+     */
+    public boolean tieneFichasRojas(){
+        return tieneFichasRojas;
+    }
+
+    /**
+     * Metodo getter para saber si le tocaron las fichas blancas al jugador
+     * @return
+     */
+    public boolean tieneFichasBlancas(){
+        return tieneFichasBlancas;
+    }
+
+    /**
+     * Metodo setter para asignar un tipo de ficha al usuario
+     * @param fichasRojas
+     */
+    public void setFichasRojas(boolean fichasRojas){
+        this.tieneFichasRojas = fichasRojas;
+    }
     
+    /**
+     * Metodo setter para asignar un tipo de ficha al usuario
+     * @param fichasBlancas
+     */
+    public void setFichasBlancas(boolean fichasBlancas){
+        this.tieneFichasBlancas = fichasBlancas;
+    }
+
     /**
      * Metodo para mostrar informacion puntual del usuario
      * @return
