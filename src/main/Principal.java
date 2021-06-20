@@ -33,12 +33,6 @@ public class Principal {
          */
         int opcion=0;
         /**
-         * Mensaje de bienvenida
-         */
-        System.out.println("Bienvenido al juego de Damas");
-        System.out.println("\n\n");
-
-        /**
          * Ciclo do para repetir el menu principal hasta que el usuario desee salir
          */
         do{

@@ -140,7 +140,7 @@ public class Usuario{
      * @return
      */
     public String mostrarInformacion(){
-        return "Id: "+this.id+ " nombre del usuario: "+this.nombre;
+        return "Id: "+this.id+ ", nombre del usuario: "+this.nombre+", nickname: "+this.nickname;
     }
 
 }

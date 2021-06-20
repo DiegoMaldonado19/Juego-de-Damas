@@ -15,7 +15,8 @@ public class VectorUsuarios {
      * Constructor para el vector de usuarios
      */
     public VectorUsuarios(){
-        siguienteCodigo=1;
+        inicializarUsuarios();
+        siguienteCodigo=6;
     }
 
     /**
@@ -44,10 +45,22 @@ public class VectorUsuarios {
     }
 
     /**
+     * Metodo para inicializar los usuarios por defecto en el sistema
+     */
+    public void inicializarUsuarios(){
+        usuarios[0] = new Usuario(1, "Diego Maldonado", "Dieguitox1920");
+        usuarios[1] = new Usuario(2, "Anette Castellanos", "Castellane_");
+        usuarios[2] = new Usuario(3, "Marco Munguia", "Mander");
+        usuarios[3] = new Usuario(4, "Jesyca Lopez", "Jessilota");
+        usuarios[4] = new Usuario(5, "Bryan Guerra", "BryanMLG");
+    }
+
+    /**
      * Metodo para mostrar usuarios en pantalla
      */
     public void mostrarUsuario(){
-        System.out.println("\n\n Usuarios de juego");
+        System.out.println("\n\n Usuarios dentro del Juego:");
+        System.out.println("---------------------------------------------");
         for(int i=0; i<(siguienteCodigo-1); i++){
             System.out.println((i+1)+") "+usuarios[i].mostrarInformacion());
         }
