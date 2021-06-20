@@ -81,4 +81,12 @@ public class VectorUsuarios {
             System.out.println("\n\n");
         }
     }
+
+    /**
+     * Metodo para obtener el arreglo de usuarios
+     * @return
+     */
+    public Usuario[] getUsuarios(){
+        return usuarios;
+    }
 }

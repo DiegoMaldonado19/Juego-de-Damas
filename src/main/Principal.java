@@ -1,6 +1,7 @@
 package src.main;
 import src.tablero.*;
 import src.usuario.VectorUsuarios;
+import src.juego.Juego;
 /**
  * Clase Principal, la cual se encarga de todas las llamadas
  */
@@ -55,7 +56,7 @@ public class Principal {
                 break;
     
                 case 3:
-                    jugar();
+                    jugar(tablaUsuarios);
                 break;
     
                 case 4:
@@ -78,12 +79,11 @@ public class Principal {
     /**
      * Metodo mostrar tablero el cual imprime en pantalla el tablero e inicia el juego
      */
-    public void jugar(){
+    public void jugar(VectorUsuarios tablaUsuarios){
         Tablero mesaDeJuego = new Tablero();
-        mesaDeJuego.llenarTablero(0, 3, 8);
-        mesaDeJuego.llenarTablero(3, 5, 8);
-        mesaDeJuego.llenarTablero(5, 8, 8);
-        mesaDeJuego.imprimirTablero(0, 8, 8);
+        Juego juego = new Juego();
+        juego.inicioJuego(tablaUsuarios, mesaDeJuego);
+
     }
 
 }
