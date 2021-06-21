@@ -12,6 +12,14 @@ public class Tablero {
     private Color color = new Color();
 
     /**
+     * Metodo para retornar la matriz de casillas
+     * @return
+     */
+    public Casilla[][] getCasillas(){
+        return casillas;
+    }
+
+    /**
      * Metodo para llenar nuestra matriz de casillas con fichas 
      * @param inicio , indicamos el inicio de las iteraciones
      * @param fila , indicamos hasta que fila se efectuaran las iteraciones

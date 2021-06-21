@@ -101,7 +101,7 @@ public class VectorUsuarios {
         }
         for (int i = 1; i < (siguienteCodigo-1); i++) {
             for (int j = 0; j < (siguienteCodigo-1-i); j++) {
-                if(podio[j].getPuntuacion()<podio[j+1].getPuntuacion()){
+                if(podio[j].getPartidasGanadas()<podio[j+1].getPartidasGanadas()){
                     Usuario aux = podio[j];
                     podio[j] = podio[j+1];
                     podio[j+1]= aux;

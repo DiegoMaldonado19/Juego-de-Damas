@@ -57,6 +57,14 @@ public class Casilla {
     }
 
     /**
+     * Metodo para saber si tenemos una casilla blanca
+     * @return
+     */
+    public boolean isCasillaBlanca(){
+        return casillaBlanca;
+    }
+
+    /**
      * Metodo getter para obtener la ficha en una determinadad casilla
      * @return
      */
