@@ -57,6 +57,15 @@ public class Casilla {
     }
 
     /**
+     * Metodo para settear una casilla vacia
+     * @param vacia
+     * @return
+     */
+    public void setVacia(boolean vacia){
+        this.vacia = vacia;
+    }
+
+    /**
      * Metodo para saber si tenemos una casilla blanca
      * @return
      */

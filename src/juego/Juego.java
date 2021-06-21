@@ -117,137 +117,133 @@ public class Juego {
     }
 
     /**
-     * Metodo para mostrar los tiros disponibles al usuario, dependiendo si juego fichas blancas o rojas
+     * Metodo para mostrar los tiros disponibles al usuario, dependiendo si juega fichas blancas o rojas
      * @param mesaDeJuego
      */
     public void mostrarTiroDisponible(Tablero mesaDeJuego, VectorUsuarios tablaUsuarios, int filaInicio, int filaFinal, boolean turnoJugador1){
         int restoI=0;
+        int restoJ=0;
         if(turnoJugador1==true){
             for(int i=filaInicio; i<filaFinal; i++){
-                restoI = i%2; 
                 for(int j=0; j<8; j++){
-                    if(j==0){
-                        if(mesaDeJuego.getCasillas()[i][j].isCasillaBlanca()==false && mesaDeJuego.getCasillas()[i-1][j+1].getFicha().isRojo()==true){
-                            if(tablaUsuarios.getUsuarios()[this.idJugadorPartida1-1].tieneFichasRojas()==true){
-                                System.out.println(tablaUsuarios.getUsuarios()[this.idJugadorPartida1-1].getNickname());
-                                if(restoI==0){
-                                    System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i-1)+","+(j-1)+")");
-                                }
-                                else{
-                                    
-                                    System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i-1)+","+(j-1)+")"
-                                    +" y la ficha: ("+(i-1)+","+(j+1)+")");
-                                }
-                            }
-                            else if(tablaUsuarios.getUsuarios()[this.idJugadorPartida2-1].tieneFichasRojas()==true){
-                                System.out.println(tablaUsuarios.getUsuarios()[this.idJugadorPartida2-1].getNickname());
-                                if(restoI==0){
-                                    System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i-1)+","+(j+1)+")");
-                                }
-                                else{
-                                    
-                                    System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i-1)+","+(j-1)+")"
-                                    +" y la ficha: ("+(i-1)+","+(j+1)+")");
-                                }
-                            }
-                        }
-                    }
-                    else if(j>0 && j<8){
-                        if(mesaDeJuego.getCasillas()[i][j].isCasillaBlanca()==false && mesaDeJuego.getCasillas()[i-1][j-1].getFicha().isRojo()==true){
-                            if(tablaUsuarios.getUsuarios()[this.idJugadorPartida1-1].tieneFichasRojas()==true){
-                                System.out.println(tablaUsuarios.getUsuarios()[this.idJugadorPartida1-1].getNickname());
-                                if(restoI==0){
-                                    System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i-1)+","+(j+1)+")");
-                                }
-                                else{
+                    restoI = i%2;
+                    restoJ = j%2;
+                    if(restoI==0){
+                        if(tablaUsuarios.getUsuarios()[this.idJugadorPartida1-1].tieneFichasRojas()==true){
+                            if(restoJ==0){
+                                if(mesaDeJuego.getCasillas()[i][j].isVacia()==true){
                                     if(j==7){
                                         System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i-1)+","+(j-1)+")");
                                     }
                                     else{
                                         System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i-1)+","+(j-1)+")"
-                                        +" y la ficha: ("+(i-1)+","+(j+1)+")");
+                                    +" y la ficha: ("+(i-1)+","+(j+1)+")");
                                     }
                                 }
                             }
-                            else if(tablaUsuarios.getUsuarios()[this.idJugadorPartida2-1].tieneFichasRojas()==true){
-                                System.out.println(tablaUsuarios.getUsuarios()[this.idJugadorPartida2-1].getNickname());
-                                if(restoI==0){
-                                    System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i-1)+","+(j+1)+")");
-                                }
-                                else{
+                        }
+                        else if(tablaUsuarios.getUsuarios()[this.idJugadorPartida2-1].tieneFichasRojas()==true){
+                            if(restoJ==0){
+                                if(mesaDeJuego.getCasillas()[i][j].isVacia()==true){
                                     if(j==7){
                                         System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i-1)+","+(j-1)+")");
                                     }
                                     else{
                                         System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i-1)+","+(j-1)+")"
-                                        +" y la ficha: ("+(i-1)+","+(j+1)+")");
+                                    +" y la ficha: ("+(i-1)+","+(j+1)+")");
                                     }
                                 }
                             }
                         }
                     }
+                    else if(restoI!=0){
+                        if(tablaUsuarios.getUsuarios()[this.idJugadorPartida1-1].tieneFichasRojas()==true){
+                            if(restoJ!=0){
+                                if(mesaDeJuego.getCasillas()[i][j].isVacia()==true){
+                                    if(j==7){
+                                        System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i-1)+","+(j-1)+")");
+                                    }
+                                    else{
+                                        System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i-1)+","+(j-1)+")"
+                                    +" y la ficha: ("+(i-1)+","+(j+1)+")");
+                                    }
+                                }
+                            }
+                        }
+                        else if(tablaUsuarios.getUsuarios()[this.idJugadorPartida2-1].tieneFichasRojas()==true){
+                            if(restoJ!=0){
+                                if(mesaDeJuego.getCasillas()[i][j].isVacia()==true){
+                                    if(j==7){
+                                        System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i-1)+","+(j-1)+")");
+                                    }
+                                    else{
+                                        System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i-1)+","+(j-1)+")"
+                                    +" y la ficha: ("+(i-1)+","+(j+1)+")");
+                                    }
+                                }
+                            }
+                        }
+                        
+                    }  
                 }
             }
         }
         else if(turnoJugador1==false){
             for(int i=filaFinal; i>filaInicio; i--){
-                restoI=i%2;
                 for(int j=0; j<8; j++){
-                    if(j==0){
-                        if(mesaDeJuego.getCasillas()[i][j].isCasillaBlanca()==false && mesaDeJuego.getCasillas()[i+1][j+1].getFicha().isBlanca()==true){
-                            if(tablaUsuarios.getUsuarios()[this.idJugadorPartida1-1].tieneFichasBlancas()==true){
-                                System.out.println(tablaUsuarios.getUsuarios()[this.idJugadorPartida1-1].getNickname());
-                                if(restoI==0){
-                                    System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i+1)+","+(j+1)+")");
-                                }
-                                else{
-                                    
-                                    System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i+1)+","+(j-1)+")"
+                    restoI = i%2;
+                    restoJ = j%2;
+                    if(restoI==0){
+                        if(tablaUsuarios.getUsuarios()[this.idJugadorPartida1-1].tieneFichasBlancas()==true){
+                            if(restoJ==0){
+                                if(mesaDeJuego.getCasillas()[i][j].isVacia()==true){
+                                    if(j==0){
+                                        System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i+1)+","+(j+1)+")");
+                                    }
+                                    else{
+                                        System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i+1)+","+(j-1)+")"
                                     +" y la ficha: ("+(i+1)+","+(j+1)+")");
+                                    }
                                 }
                             }
-                            else if(tablaUsuarios.getUsuarios()[this.idJugadorPartida2-1].tieneFichasBlancas()==true){
-                                System.out.println(tablaUsuarios.getUsuarios()[this.idJugadorPartida2-1].getNickname());
-                                if(restoI==0){
-                                    System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i+1)+","+(j+1)+")");
-                                }
-                                else{
-                                    
-                                    System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i+1)+","+(j-1)+")"
+                        }
+                        else if(tablaUsuarios.getUsuarios()[this.idJugadorPartida2-1].tieneFichasBlancas()==true){
+                            if(restoJ==0){
+                                if(mesaDeJuego.getCasillas()[i][j].isVacia()==true){
+                                    if(j==0){
+                                        System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i+1)+","+(j-1)+")");
+                                    }
+                                    else{
+                                        System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i+1)+","+(j-1)+")"
                                     +" y la ficha: ("+(i+1)+","+(j+1)+")");
+                                    }
                                 }
                             }
                         }
                     }
-                    else if(j>0 && j<8){
-                        if(mesaDeJuego.getCasillas()[i][j].isCasillaBlanca()==false && mesaDeJuego.getCasillas()[i+1][j-1].getFicha().isBlanca()==true){
-                            if(tablaUsuarios.getUsuarios()[this.idJugadorPartida1-1].tieneFichasBlancas()==true){
-                                System.out.println(tablaUsuarios.getUsuarios()[this.idJugadorPartida1-1].getNickname());
-                                if(restoI==0){
-                                    System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i+1)+","+(j+1)+")");
-                                }
-                                else{
-                                    if(j==7){
+                    else if(restoJ!=0){
+                        if(tablaUsuarios.getUsuarios()[this.idJugadorPartida1-1].tieneFichasBlancas()==true){
+                            if(restoJ!=0){
+                                if(mesaDeJuego.getCasillas()[i][j].isVacia()==true){
+                                    if(j==0){
                                         System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i+1)+","+(j-1)+")");
                                     }
                                     else{
                                         System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i+1)+","+(j-1)+")"
-                                        +" y la ficha: ("+(i+1)+","+(j+1)+")");
+                                    +" y la ficha: ("+(i+1)+","+(j+1)+")");
                                     }
                                 }
                             }
-                            else if(tablaUsuarios.getUsuarios()[this.idJugadorPartida2-1].tieneFichasBlancas()==true){
-                                System.out.println(tablaUsuarios.getUsuarios()[this.idJugadorPartida2-1].getNickname());
-                                if(restoI==0){
-                                    System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i+1)+","+(j+1)+")");
-                                }
-                                else{
-                                    if(j==7){
+                        }
+                        else if(tablaUsuarios.getUsuarios()[this.idJugadorPartida2-1].tieneFichasBlancas()==true){
+                            if(restoJ!=0){
+                                if(mesaDeJuego.getCasillas()[i][j].isVacia()==true){
+                                    if(j==0){
                                         System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i+1)+","+(j-1)+")");
                                     }
                                     else{
                                         System.out.println("Tiro Disponbile en la posicion ("+i+","+j+")"+" para la ficha: ("+(i+1)+","+(j-1)+")"
-                                        +" y la ficha: ("+(i+1)+","+(j+1)+")");
+                                    +" y la ficha: ("+(i+1)+","+(j+1)+")");
                                     }
                                 }
                             }
@@ -263,7 +259,7 @@ public class Juego {
      * @param mesaDeJuego
      * @param tablaUsuarios
      */
-    public void inicioPartida(Tablero mesaDeJuego, VectorUsuarios tablaUsuarios){
+    public void inicioPartida(VectorUsuarios tablaUsuarios){
         System.out.println("\n\n");
         System.out.println("Partida Normal");
         System.out.println("-----------------------------");
@@ -289,15 +285,15 @@ public class Juego {
 
     /**
      * Metodo para partida normal
-     * @param mesaDeJuego
-     * @param tablaUsuarios
+     * @param mesaDeJuego , tablero de juego
+     * @param tablaUsuarios , vector que contiene a los usuarios
      */
     public void partidaNormal(Tablero mesaDeJuego, VectorUsuarios tablaUsuarios){
         int tiroXJugador1=0, tiroYJugador1=0;
         int fichaXJugador1=0, fichaYJugador1=0;
         int tiroXJugador2=0, tiroYJugador2=0;
         int fichaXJugador2=0, fichaYJugador2=0;
-        inicioPartida(mesaDeJuego, tablaUsuarios);
+        inicioPartida(tablaUsuarios);
         tableroDeJuego(mesaDeJuego);
         System.out.println("\n\n");
         mostrarTiroDisponible(mesaDeJuego, tablaUsuarios, 3, 4, true);
@@ -306,7 +302,8 @@ public class Juego {
         tiroXJugador1 = IngresoDatos.getEntero("Ingresa la coordenada en X del movimiento, (x,y): ", true);
         tiroYJugador1 = IngresoDatos.getEntero("Ingresa la coordenada en Y del movimiento, (x,y): ", true);
         System.out.println("\n\n");
-        tableroDeJuego(mesaDeJuego);
+        moverFicha(fichaXJugador1, fichaYJugador1, mesaDeJuego, tiroXJugador1, tiroYJugador1);
+        mesaDeJuego.imprimirTablero(0, 8, 8);
         System.out.println("\n\n");
         mostrarTiroDisponible(mesaDeJuego, tablaUsuarios, 3, 4, false);
         fichaXJugador2 = IngresoDatos.getEntero("Ingresa la coordenada en x de la ficha a mover, (x,y): ", true);
@@ -314,5 +311,21 @@ public class Juego {
         tiroXJugador2 = IngresoDatos.getEntero("Ingresa la coordenada en X del movimiento, (x,y): ", true);
         tiroYJugador2 = IngresoDatos.getEntero("Ingresa la coordenada en Y del movimiento, (x,y): ", true);
         System.out.println("\n\n");
+        moverFicha(fichaXJugador2, fichaYJugador2, mesaDeJuego, tiroXJugador2, tiroYJugador2);
+        mesaDeJuego.imprimirTablero(0, 8, 8);
+    }
+
+    /**
+     * Metodo para mover ficha
+     * @param posx , posicion original de la ficha en x
+     * @param posy , posicion original de la ficha en y
+     * @param mesaDeJuego , tablero de juego
+     * @param tiroX , posicion nueva para la ficha en x
+     * @param tiroY , posiicon nueva para la ficha en y
+     */
+    public void moverFicha(int posx, int posy, Tablero mesaDeJuego, int tiroX, int tiroY){
+        mesaDeJuego.getCasillas()[tiroX][tiroY].setFicha(mesaDeJuego.getCasillas()[posx][posy].getFicha());
+        mesaDeJuego.getCasillas()[tiroX][tiroY].setVacia(false); 
+        mesaDeJuego.getCasillas()[posx][posy].setVacia(true); 
     }
 }
